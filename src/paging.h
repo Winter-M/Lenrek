@@ -68,6 +68,11 @@ inline void paging_flush_all() {
 	paging_set_state(1);
 }
 
+#	/* Paging Pseudo Functions */
+#	define paging_supported()	1
+#	define paging_page_size()	4096
+#	define paging_ptable_size()	4096
+#	define paging_pdir_size()	4096
 # endif /* i386 */
 
 paddr_t paging_get_physical(vaddr_t addr, flags *flags);
