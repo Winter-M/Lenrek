@@ -10,5 +10,5 @@ all : libarch.a
 clean :
 	rm -f libarch.a
 
-libarch.a : libarch.a(paging.o)
+libarch.a : libarch.a(console.o paging.o)
 
