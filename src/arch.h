@@ -10,7 +10,7 @@ inline void interrupts(int state) {
 	else __asm__ __volatile__("cli");
 }
 
-__attribue__((always_inline))
+__attribute__((always_inline))
 inline void io_wait() {
 	extern void outb(port_t, char);
 	outb(0x80, 0);

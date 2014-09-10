@@ -13,7 +13,7 @@ struct idt_descr {
 } __attribute__((packed));
 
 struct idt_entry idt_block[256];
-struct idt_descr idt_descrtiptor;
+struct idt_descr idt_descriptor;
 
 void idt_set_entry(int intr_id, void *handler, short selector, char attr) {
 	struct idt_entry *entry = &idt_block[intr_id];

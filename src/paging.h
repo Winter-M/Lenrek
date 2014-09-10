@@ -75,7 +75,7 @@ inline void paging_flush_all() {
 #	define paging_pdir_size()	4096
 # endif /* i386 */
 
-paddr_t paging_get_physical(vaddr_t addr, flags *flags);
+paddr_t paging_get_physical(vaddr_t addr, flags_t *flags);
 
 paddr_t paging_map_page(vaddr_t addr0, paddr_t addr1, flags_t flags);
 

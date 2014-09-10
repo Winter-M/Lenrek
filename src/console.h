@@ -3,6 +3,7 @@
 
 # ifdef _CONSOLE_I386
 enum console_color {
+	COLOR_GREY	= 0x07
 	// TODO
 };
 #	/* Console Pseudo Fucntions */

@@ -1,9 +1,9 @@
 
 # include <paging.h>
 
-# define CHK_BIT(V, N)	((V) & PAGE_BIT(N))
-# define SET_BIT(V, N)	((V) |= PAGE_BIT(N))
-# define CLR_VIT(V, N)	((V) &= ~PAGE_BIT(N))
+# define CHK_BIT(V, N)	((V) & (N))
+# define SET_BIT(V, N)	((V) |= (N))
+# define CLR_VIT(V, N)	((V) &= ~(N))
 
 # define PDIDX(ADDR)	((ADDR) >> 22)
 # define PTIDX(ADDR)	(((ADDR) >> 12) & 0x3FF)
@@ -34,7 +34,7 @@ paddr_t paging_get_physical(vaddr_t addr, flags_t *flags) {
 }
 
 paddr_t paging_map_page(vaddr_t addr0, paddr_t addr1, flags_t flags) {
-	if((addr0 & PAGE_MASK) || (addr1 & PAGE_MASK)) {
+	if((addr0 & FLAG_MASK) || (addr1 & FLAG_MASK)) {
 		return (paddr_t)-1;
 	}
 
